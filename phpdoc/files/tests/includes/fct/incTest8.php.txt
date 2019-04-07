@@ -1,0 +1,47 @@
+<?php
+use PHPUnit\Framework\TestCase;
+require_once '/var/www/html/GSB/PPE-ApplicationFrais/Ressources/GSB_AppliMVC/includes/fct.inc.php';;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/**
+ * Description of incTest
+ *
+ * @author MERLIERE VANHOEKE Sébastien <sertux.dev@gmail.com>
+ */
+class incTest extends TestCase {
+
+    /**
+     * @var \RemoteWebDriver
+     */
+    protected $webDriver;
+
+    public function setUp() {
+//        $capabilities = array(\WebDriverCapabilityType::BROWSER_NAME => 'firefox');
+//        $this->webDriver = RemoteWebDriver::create('http://localhost:4444/wd/hub', $capabilities);
+    }
+
+    public function tearDown() {
+//        $this->webDriver->close();
+    }
+
+    protected $url = 'http://www.netbeans.org/';
+
+    public function reverseDate() {
+//        $this->webDriver->get($this->url);
+        // checking that page title contains word 'NetBeans'
+//        $this->assertContains('NetBeans', $this->webDriver->getTitle());
+        $this->assertSame("2018-11-12", dateFrancaisVersAnglais('12/11/2018'));
+    }
+
+public function reverseDate2() {
+//        $this->webDriver->get($this->url);
+        // checking that page title contains word 'NetBeans'
+//        $this->assertContains('NetBeans', $this->webDriver->getTitle());
+        $this->assertSame("2018-11-12", dateFrancaisVersAnglais('12/11/2019'));
+    }
+}
+

@@ -1,0 +1,1614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>GSB_AppliMVC</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+    <link href="../css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/prism.css" rel="stylesheet" media="all"/>
+    <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+    <!--[if lt IE 9]>
+    <script src="../js/html5.js"></script>
+    <![endif]-->
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <script src="../js/ui/1.10.4/jquery-ui.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.smooth-scroll.js"></script>
+    <script src="../js/prism.min.js"></script>
+    <!-- TODO: Add http://jscrollpane.kelvinluck.com/ to style the scrollbars for browsers not using webkit-->
+        <script type="text/javascript">
+        function loadExternalCodeSnippets() {
+            Array.prototype.slice.call(document.querySelectorAll('pre[data-src]')).forEach(function (pre) {
+                var src = pre.getAttribute('data-src');
+                var extension = (src.match(/\.(\w+)$/) || [, ''])[1];
+                var language = 'php';
+
+                var code = document.createElement('code');
+                code.className = 'language-' + language;
+
+                pre.textContent = '';
+
+                code.textContent = 'Loading…';
+
+                pre.appendChild(code);
+
+                var xhr = new XMLHttpRequest();
+
+                xhr.open('GET', src, true);
+
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState == 4) {
+
+                        if (xhr.status < 400 && xhr.responseText) {
+                            code.textContent = xhr.responseText;
+
+                            Prism.highlightElement(code);
+                        }
+                        else if (xhr.status >= 400) {
+                            code.textContent = '✖ Error ' + xhr.status + ' while fetching file: ' + xhr.statusText;
+                        }
+                        else {
+                            code.textContent = '✖ Error: File does not exist or is empty';
+                        }
+                    }
+                };
+
+                xhr.send(null);
+            });
+        }
+
+        $(document).ready(function(){
+            loadExternalCodeSnippets();
+        });
+        $('#source-view').on('shown', function () {
+            loadExternalCodeSnippets();
+        })
+    </script>
+
+    <link rel="shortcut icon" href="../images/favicon.ico"/>
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+</head>
+<body>
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <i class="icon-ellipsis-vertical"></i>
+            </a>
+            <a class="brand" href="../index.html">GSB_AppliMVC</a>
+
+            <div class="nav-collapse">
+                <ul class="nav pull-right">
+                                        <li class="dropdown">
+                        <a href="../index.html" class="dropdown-toggle" data-toggle="dropdown">
+                            API Documentation <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                                                        <li><a href="../namespaces/Composer.html">\Composer</a></li>
+                                                        <li><a href="../namespaces/Facebook.html">\Facebook</a></li>
+                                                        <li><a href="../namespaces/Symfony.html">\Symfony</a></li>
+                                                    </ul>
+                    </li>
+                                        <li class="dropdown" id="charts-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Charts <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../graphs/class.html">
+                                    <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" id="reports-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Reports <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../reports/errors.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">1588</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/markers.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">10</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/deprecated.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <i class="icon-list-alt"></i>&#160;Deprecated <span class="label label-info pull-right">6</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--<div class="go_to_top">-->
+    <!--<a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>-->
+    <!--</div>-->
+</div>
+
+<div id="___" class="container-fluid">
+        <section class="row-fluid">
+        <div class="span2 sidebar">
+                                <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-731867244"></a>
+                                <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
+            </div>
+            <div id="namespace-731867244" class="accordion-body collapse in">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-777611243"></a>
+                                <a href="../namespaces/Composer.html" style="margin-left: 30px; padding-left: 0">Composer</a>
+            </div>
+            <div id="namespace-777611243" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-956589315"></a>
+                                <a href="../namespaces/Composer.Autoload.html" style="margin-left: 30px; padding-left: 0">Autoload</a>
+            </div>
+            <div id="namespace-956589315" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Composer.Autoload.ClassLoader.html">ClassLoader</a></li>
+                                                    <li class="class"><a href="../classes/Composer.Autoload.ComposerStaticInit1d477ad1e8c34b27f098484c0ca6bacb.html">ComposerStaticInit1d477ad1e8c34b27f098484c0ca6bacb</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1533036834"></a>
+                                <a href="../namespaces/Facebook.html" style="margin-left: 30px; padding-left: 0">Facebook</a>
+            </div>
+            <div id="namespace-1533036834" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-380615979"></a>
+                                <a href="../namespaces/Facebook.WebDriver.html" style="margin-left: 30px; padding-left: 0">WebDriver</a>
+            </div>
+            <div id="namespace-380615979" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1169705024"></a>
+                                <a href="../namespaces/Facebook.WebDriver.Chrome.html" style="margin-left: 30px; padding-left: 0">Chrome</a>
+            </div>
+            <div id="namespace-1169705024" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Chrome.ChromeDriver.html">ChromeDriver</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Chrome.ChromeDriver.html">ChromeDriver</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Chrome.ChromeDriverService.html">ChromeDriverService</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Chrome.ChromeDriverService.html">ChromeDriverService</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Chrome.ChromeOptions.html">ChromeOptions</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Chrome.ChromeOptions.html">ChromeOptions</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1339025997"></a>
+                                <a href="../namespaces/Facebook.WebDriver.Exception.html" style="margin-left: 30px; padding-left: 0">Exception</a>
+            </div>
+            <div id="namespace-1339025997" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Exception.ElementNotSelectableException.html">ElementNotSelectableException</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Exception.ElementNotSelectableException.html">ElementNotSelectableException</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Exception.ElementNotVisibleException.html">ElementNotVisibleException</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Exception.ElementNotVisibleException.html">ElementNotVisibleException</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Exception.ExpectedException.html">ExpectedException</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Exception.ExpectedException.html">ExpectedException</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Exception.IMEEngineActivationFailedException.html">IMEEngineActivationFailedException</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Exception.IMEEngineActivationFailedException.html">IMEEngineActivationFailedException</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Exception.IMENotAvailableException.html">IMENotAvailableException</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Exception.IMENotAvailableException.html">IMENotAvailableException</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Exception.IndexOutOfBoundsException.html">IndexOutOfBoundsException</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Exception.IndexOutOfBoundsException.html">IndexOutOfBoundsException</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Exception.InvalidCookieDomainException.html">InvalidCookieDomainException</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Exception.InvalidCookieDomainException.html">InvalidCookieDomainException</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Exception.InvalidCoordinatesException.html">InvalidCoordinatesException</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Exception.InvalidCoordinatesException.html">InvalidCoordinatesException</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Exception.InvalidElementStateException.html">InvalidElementStateException</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Exception.InvalidElementStateException.html">InvalidElementStateException</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Exception.InvalidSelectorException.html">InvalidSelectorException</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Exception.InvalidSelectorException.html">InvalidSelectorException</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Exception.MoveTargetOutOfBoundsException.html">MoveTargetOutOfBoundsException</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Exception.MoveTargetOutOfBoundsException.html">MoveTargetOutOfBoundsException</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Exception.NoAlertOpenException.html">NoAlertOpenException</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Exception.NoAlertOpenException.html">NoAlertOpenException</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Exception.NoCollectionException.html">NoCollectionException</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Exception.NoCollectionException.html">NoCollectionException</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Exception.NoScriptResultException.html">NoScriptResultException</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Exception.NoScriptResultException.html">NoScriptResultException</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Exception.NoStringException.html">NoStringException</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Exception.NoStringException.html">NoStringException</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Exception.NoStringLengthException.html">NoStringLengthException</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Exception.NoStringLengthException.html">NoStringLengthException</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Exception.NoStringWrapperException.html">NoStringWrapperException</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Exception.NoStringWrapperException.html">NoStringWrapperException</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Exception.NoSuchCollectionException.html">NoSuchCollectionException</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Exception.NoSuchCollectionException.html">NoSuchCollectionException</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Exception.NoSuchDocumentException.html">NoSuchDocumentException</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Exception.NoSuchDocumentException.html">NoSuchDocumentException</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Exception.NoSuchDriverException.html">NoSuchDriverException</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Exception.NoSuchDriverException.html">NoSuchDriverException</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Exception.NoSuchElementException.html">NoSuchElementException</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Exception.NoSuchElementException.html">NoSuchElementException</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Exception.NoSuchFrameException.html">NoSuchFrameException</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Exception.NoSuchFrameException.html">NoSuchFrameException</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Exception.NoSuchWindowException.html">NoSuchWindowException</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Exception.NoSuchWindowException.html">NoSuchWindowException</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Exception.NullPointerException.html">NullPointerException</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Exception.NullPointerException.html">NullPointerException</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Exception.ScriptTimeoutException.html">ScriptTimeoutException</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Exception.ScriptTimeoutException.html">ScriptTimeoutException</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Exception.SessionNotCreatedException.html">SessionNotCreatedException</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Exception.SessionNotCreatedException.html">SessionNotCreatedException</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Exception.StaleElementReferenceException.html">StaleElementReferenceException</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Exception.StaleElementReferenceException.html">StaleElementReferenceException</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Exception.TimeOutException.html">TimeOutException</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Exception.TimeOutException.html">TimeOutException</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Exception.UnableToSetCookieException.html">UnableToSetCookieException</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Exception.UnableToSetCookieException.html">UnableToSetCookieException</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Exception.UnexpectedAlertOpenException.html">UnexpectedAlertOpenException</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Exception.UnexpectedAlertOpenException.html">UnexpectedAlertOpenException</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Exception.UnexpectedJavascriptException.html">UnexpectedJavascriptException</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Exception.UnexpectedJavascriptException.html">UnexpectedJavascriptException</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Exception.UnexpectedTagNameException.html">UnexpectedTagNameException</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Exception.UnexpectedTagNameException.html">UnexpectedTagNameException</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Exception.UnknownCommandException.html">UnknownCommandException</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Exception.UnknownCommandException.html">UnknownCommandException</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Exception.UnknownServerException.html">UnknownServerException</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Exception.UnknownServerException.html">UnknownServerException</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Exception.UnrecognizedExceptionException.html">UnrecognizedExceptionException</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Exception.UnrecognizedExceptionException.html">UnrecognizedExceptionException</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Exception.UnsupportedOperationException.html">UnsupportedOperationException</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Exception.UnsupportedOperationException.html">UnsupportedOperationException</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Exception.WebDriverCurlException.html">WebDriverCurlException</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Exception.WebDriverCurlException.html">WebDriverCurlException</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Exception.WebDriverException.html">WebDriverException</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Exception.WebDriverException.html">WebDriverException</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Exception.XPathLookupException.html">XPathLookupException</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Exception.XPathLookupException.html">XPathLookupException</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1031127006"></a>
+                                <a href="../namespaces/Facebook.WebDriver.Firefox.html" style="margin-left: 30px; padding-left: 0">Firefox</a>
+            </div>
+            <div id="namespace-1031127006" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Firefox.FirefoxDriver.html">FirefoxDriver</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Firefox.FirefoxDriver.html">FirefoxDriver</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Firefox.FirefoxPreferences.html">FirefoxPreferences</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Firefox.FirefoxPreferences.html">FirefoxPreferences</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Firefox.FirefoxProfile.html">FirefoxProfile</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Firefox.FirefoxProfile.html">FirefoxProfile</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1448572372"></a>
+                                <a href="../namespaces/Facebook.WebDriver.Interactions.html" style="margin-left: 30px; padding-left: 0">Interactions</a>
+            </div>
+            <div id="namespace-1448572372" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1142757997"></a>
+                                <a href="../namespaces/Facebook.WebDriver.Interactions.Internal.html" style="margin-left: 30px; padding-left: 0">Internal</a>
+            </div>
+            <div id="namespace-1142757997" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Interactions.Internal.WebDriverButtonReleaseAction.html">WebDriverButtonReleaseAction</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Interactions.Internal.WebDriverButtonReleaseAction.html">WebDriverButtonReleaseAction</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Interactions.Internal.WebDriverClickAction.html">WebDriverClickAction</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Interactions.Internal.WebDriverClickAction.html">WebDriverClickAction</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Interactions.Internal.WebDriverClickAndHoldAction.html">WebDriverClickAndHoldAction</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Interactions.Internal.WebDriverClickAndHoldAction.html">WebDriverClickAndHoldAction</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Interactions.Internal.WebDriverContextClickAction.html">WebDriverContextClickAction</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Interactions.Internal.WebDriverContextClickAction.html">WebDriverContextClickAction</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Interactions.Internal.WebDriverCoordinates.html">WebDriverCoordinates</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Interactions.Internal.WebDriverCoordinates.html">WebDriverCoordinates</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Interactions.Internal.WebDriverDoubleClickAction.html">WebDriverDoubleClickAction</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Interactions.Internal.WebDriverDoubleClickAction.html">WebDriverDoubleClickAction</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Interactions.Internal.WebDriverKeyDownAction.html">WebDriverKeyDownAction</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Interactions.Internal.WebDriverKeyDownAction.html">WebDriverKeyDownAction</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Interactions.Internal.WebDriverKeysRelatedAction.html">WebDriverKeysRelatedAction</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Interactions.Internal.WebDriverKeysRelatedAction.html">WebDriverKeysRelatedAction</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Interactions.Internal.WebDriverKeyUpAction.html">WebDriverKeyUpAction</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Interactions.Internal.WebDriverKeyUpAction.html">WebDriverKeyUpAction</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Interactions.Internal.WebDriverMouseAction.html">WebDriverMouseAction</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Interactions.Internal.WebDriverMouseAction.html">WebDriverMouseAction</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Interactions.Internal.WebDriverMouseMoveAction.html">WebDriverMouseMoveAction</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Interactions.Internal.WebDriverMouseMoveAction.html">WebDriverMouseMoveAction</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Interactions.Internal.WebDriverMoveToOffsetAction.html">WebDriverMoveToOffsetAction</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Interactions.Internal.WebDriverMoveToOffsetAction.html">WebDriverMoveToOffsetAction</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Interactions.Internal.WebDriverSendKeysAction.html">WebDriverSendKeysAction</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Interactions.Internal.WebDriverSendKeysAction.html">WebDriverSendKeysAction</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Interactions.Internal.WebDriverSingleKeyAction.html">WebDriverSingleKeyAction</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Interactions.Internal.WebDriverSingleKeyAction.html">WebDriverSingleKeyAction</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-426791330"></a>
+                                <a href="../namespaces/Facebook.WebDriver.Interactions.Touch.html" style="margin-left: 30px; padding-left: 0">Touch</a>
+            </div>
+            <div id="namespace-426791330" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/Facebook.WebDriver.Interactions.Touch.WebDriverTouchScreen.html">WebDriverTouchScreen</a></li>
+                                                    <li class="interface"><a href="../classes/Facebook.WebDriver.Interactions.Touch.WebDriverTouchScreen.html">WebDriverTouchScreen</a></li>
+                                                                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Interactions.Touch.WebDriverDoubleTapAction.html">WebDriverDoubleTapAction</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Interactions.Touch.WebDriverDoubleTapAction.html">WebDriverDoubleTapAction</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Interactions.Touch.WebDriverDownAction.html">WebDriverDownAction</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Interactions.Touch.WebDriverDownAction.html">WebDriverDownAction</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Interactions.Touch.WebDriverFlickAction.html">WebDriverFlickAction</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Interactions.Touch.WebDriverFlickAction.html">WebDriverFlickAction</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Interactions.Touch.WebDriverFlickFromElementAction.html">WebDriverFlickFromElementAction</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Interactions.Touch.WebDriverFlickFromElementAction.html">WebDriverFlickFromElementAction</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Interactions.Touch.WebDriverLongPressAction.html">WebDriverLongPressAction</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Interactions.Touch.WebDriverLongPressAction.html">WebDriverLongPressAction</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Interactions.Touch.WebDriverMoveAction.html">WebDriverMoveAction</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Interactions.Touch.WebDriverMoveAction.html">WebDriverMoveAction</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Interactions.Touch.WebDriverScrollAction.html">WebDriverScrollAction</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Interactions.Touch.WebDriverScrollAction.html">WebDriverScrollAction</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Interactions.Touch.WebDriverScrollFromElementAction.html">WebDriverScrollFromElementAction</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Interactions.Touch.WebDriverScrollFromElementAction.html">WebDriverScrollFromElementAction</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Interactions.Touch.WebDriverTapAction.html">WebDriverTapAction</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Interactions.Touch.WebDriverTapAction.html">WebDriverTapAction</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Interactions.Touch.WebDriverTouchAction.html">WebDriverTouchAction</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Interactions.Touch.WebDriverTouchAction.html">WebDriverTouchAction</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Interactions.WebDriverActions.html">WebDriverActions</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Interactions.WebDriverActions.html">WebDriverActions</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Interactions.WebDriverCompositeAction.html">WebDriverCompositeAction</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Interactions.WebDriverCompositeAction.html">WebDriverCompositeAction</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Interactions.WebDriverTouchActions.html">WebDriverTouchActions</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Interactions.WebDriverTouchActions.html">WebDriverTouchActions</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-584793205"></a>
+                                <a href="../namespaces/Facebook.WebDriver.Internal.html" style="margin-left: 30px; padding-left: 0">Internal</a>
+            </div>
+            <div id="namespace-584793205" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/Facebook.WebDriver.Internal.WebDriverLocatable.html">WebDriverLocatable</a></li>
+                                                    <li class="interface"><a href="../classes/Facebook.WebDriver.Internal.WebDriverLocatable.html">WebDriverLocatable</a></li>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1784604873"></a>
+                                <a href="../namespaces/Facebook.WebDriver.Net.html" style="margin-left: 30px; padding-left: 0">Net</a>
+            </div>
+            <div id="namespace-1784604873" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Net.URLChecker.html">URLChecker</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Net.URLChecker.html">URLChecker</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-176231109"></a>
+                                <a href="../namespaces/Facebook.WebDriver.Remote.html" style="margin-left: 30px; padding-left: 0">Remote</a>
+            </div>
+            <div id="namespace-176231109" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1086398141"></a>
+                                <a href="../namespaces/Facebook.WebDriver.Remote.Service.html" style="margin-left: 30px; padding-left: 0">Service</a>
+            </div>
+            <div id="namespace-1086398141" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Remote.Service.DriverCommandExecutor.html">DriverCommandExecutor</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Remote.Service.DriverCommandExecutor.html">DriverCommandExecutor</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Remote.Service.DriverService.html">DriverService</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Remote.Service.DriverService.html">DriverService</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/Facebook.WebDriver.Remote.ExecuteMethod.html">ExecuteMethod</a></li>
+                                                    <li class="interface"><a href="../classes/Facebook.WebDriver.Remote.ExecuteMethod.html">ExecuteMethod</a></li>
+                                                    <li class="interface"><a href="../classes/Facebook.WebDriver.Remote.FileDetector.html">FileDetector</a></li>
+                                                    <li class="interface"><a href="../classes/Facebook.WebDriver.Remote.FileDetector.html">FileDetector</a></li>
+                                                                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Remote.DesiredCapabilities.html">DesiredCapabilities</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Remote.DesiredCapabilities.html">DesiredCapabilities</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Remote.DriverCommand.html">DriverCommand</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Remote.DriverCommand.html">DriverCommand</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Remote.HttpCommandExecutor.html">HttpCommandExecutor</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Remote.HttpCommandExecutor.html">HttpCommandExecutor</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Remote.LocalFileDetector.html">LocalFileDetector</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Remote.LocalFileDetector.html">LocalFileDetector</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Remote.RemoteExecuteMethod.html">RemoteExecuteMethod</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Remote.RemoteExecuteMethod.html">RemoteExecuteMethod</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Remote.RemoteKeyboard.html">RemoteKeyboard</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Remote.RemoteKeyboard.html">RemoteKeyboard</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Remote.RemoteMouse.html">RemoteMouse</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Remote.RemoteMouse.html">RemoteMouse</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Remote.RemoteTargetLocator.html">RemoteTargetLocator</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Remote.RemoteTargetLocator.html">RemoteTargetLocator</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Remote.RemoteTouchScreen.html">RemoteTouchScreen</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Remote.RemoteTouchScreen.html">RemoteTouchScreen</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Remote.RemoteWebDriver.html">RemoteWebDriver</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Remote.RemoteWebDriver.html">RemoteWebDriver</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Remote.RemoteWebElement.html">RemoteWebElement</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Remote.RemoteWebElement.html">RemoteWebElement</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Remote.UselessFileDetector.html">UselessFileDetector</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Remote.UselessFileDetector.html">UselessFileDetector</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Remote.WebDriverBrowserType.html">WebDriverBrowserType</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Remote.WebDriverBrowserType.html">WebDriverBrowserType</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Remote.WebDriverCapabilityType.html">WebDriverCapabilityType</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Remote.WebDriverCapabilityType.html">WebDriverCapabilityType</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Remote.WebDriverCommand.html">WebDriverCommand</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Remote.WebDriverCommand.html">WebDriverCommand</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Remote.WebDriverResponse.html">WebDriverResponse</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Remote.WebDriverResponse.html">WebDriverResponse</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-748347495"></a>
+                                <a href="../namespaces/Facebook.WebDriver.Support.html" style="margin-left: 30px; padding-left: 0">Support</a>
+            </div>
+            <div id="namespace-748347495" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-2023475808"></a>
+                                <a href="../namespaces/Facebook.WebDriver.Support.Events.html" style="margin-left: 30px; padding-left: 0">Events</a>
+            </div>
+            <div id="namespace-2023475808" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Support.Events.EventFiringWebDriver.html">EventFiringWebDriver</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Support.Events.EventFiringWebDriver.html">EventFiringWebDriver</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Support.Events.EventFiringWebDriverNavigation.html">EventFiringWebDriverNavigation</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Support.Events.EventFiringWebDriverNavigation.html">EventFiringWebDriverNavigation</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Support.Events.EventFiringWebElement.html">EventFiringWebElement</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Support.Events.EventFiringWebElement.html">EventFiringWebElement</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Support.XPathEscaper.html">XPathEscaper</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Support.XPathEscaper.html">XPathEscaper</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/Facebook.WebDriver.JavaScriptExecutor.html">JavaScriptExecutor</a></li>
+                                                    <li class="interface"><a href="../classes/Facebook.WebDriver.JavaScriptExecutor.html">JavaScriptExecutor</a></li>
+                                                    <li class="interface"><a href="../classes/Facebook.WebDriver.WebDriver.html">WebDriver</a></li>
+                                                    <li class="interface"><a href="../classes/Facebook.WebDriver.WebDriver.html">WebDriver</a></li>
+                                                    <li class="interface"><a href="../classes/Facebook.WebDriver.WebDriverAction.html">WebDriverAction</a></li>
+                                                    <li class="interface"><a href="../classes/Facebook.WebDriver.WebDriverAction.html">WebDriverAction</a></li>
+                                                    <li class="interface"><a href="../classes/Facebook.WebDriver.WebDriverCapabilities.html">WebDriverCapabilities</a></li>
+                                                    <li class="interface"><a href="../classes/Facebook.WebDriver.WebDriverCapabilities.html">WebDriverCapabilities</a></li>
+                                                    <li class="interface"><a href="../classes/Facebook.WebDriver.WebDriverCommandExecutor.html">WebDriverCommandExecutor</a></li>
+                                                    <li class="interface"><a href="../classes/Facebook.WebDriver.WebDriverCommandExecutor.html">WebDriverCommandExecutor</a></li>
+                                                    <li class="interface"><a href="../classes/Facebook.WebDriver.WebDriverElement.html">WebDriverElement</a></li>
+                                                    <li class="interface"><a href="../classes/Facebook.WebDriver.WebDriverElement.html">WebDriverElement</a></li>
+                                                    <li class="interface"><a href="../classes/Facebook.WebDriver.WebDriverEventListener.html">WebDriverEventListener</a></li>
+                                                    <li class="interface"><a href="../classes/Facebook.WebDriver.WebDriverEventListener.html">WebDriverEventListener</a></li>
+                                                    <li class="interface"><a href="../classes/Facebook.WebDriver.WebDriverHasInputDevices.html">WebDriverHasInputDevices</a></li>
+                                                    <li class="interface"><a href="../classes/Facebook.WebDriver.WebDriverHasInputDevices.html">WebDriverHasInputDevices</a></li>
+                                                    <li class="interface"><a href="../classes/Facebook.WebDriver.WebDriverKeyboard.html">WebDriverKeyboard</a></li>
+                                                    <li class="interface"><a href="../classes/Facebook.WebDriver.WebDriverKeyboard.html">WebDriverKeyboard</a></li>
+                                                    <li class="interface"><a href="../classes/Facebook.WebDriver.WebDriverMouse.html">WebDriverMouse</a></li>
+                                                    <li class="interface"><a href="../classes/Facebook.WebDriver.WebDriverMouse.html">WebDriverMouse</a></li>
+                                                    <li class="interface"><a href="../classes/Facebook.WebDriver.WebDriverSearchContext.html">WebDriverSearchContext</a></li>
+                                                    <li class="interface"><a href="../classes/Facebook.WebDriver.WebDriverSearchContext.html">WebDriverSearchContext</a></li>
+                                                    <li class="interface"><a href="../classes/Facebook.WebDriver.WebDriverSelectInterface.html">WebDriverSelectInterface</a></li>
+                                                    <li class="interface"><a href="../classes/Facebook.WebDriver.WebDriverSelectInterface.html">WebDriverSelectInterface</a></li>
+                                                    <li class="interface"><a href="../classes/Facebook.WebDriver.WebDriverTargetLocator.html">WebDriverTargetLocator</a></li>
+                                                    <li class="interface"><a href="../classes/Facebook.WebDriver.WebDriverTargetLocator.html">WebDriverTargetLocator</a></li>
+                                                                                                    <li class="class"><a href="../classes/Facebook.WebDriver.AbstractWebDriverCheckboxOrRadio.html">AbstractWebDriverCheckboxOrRadio</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Cookie.html">Cookie</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.Cookie.html">Cookie</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.WebDriverAlert.html">WebDriverAlert</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.WebDriverAlert.html">WebDriverAlert</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.WebDriverBy.html">WebDriverBy</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.WebDriverBy.html">WebDriverBy</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.WebDriverCheckboxes.html">WebDriverCheckboxes</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.WebDriverDimension.html">WebDriverDimension</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.WebDriverDimension.html">WebDriverDimension</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.WebDriverDispatcher.html">WebDriverDispatcher</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.WebDriverDispatcher.html">WebDriverDispatcher</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.WebDriverExpectedCondition.html">WebDriverExpectedCondition</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.WebDriverExpectedCondition.html">WebDriverExpectedCondition</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.WebDriverKeys.html">WebDriverKeys</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.WebDriverKeys.html">WebDriverKeys</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.WebDriverNavigation.html">WebDriverNavigation</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.WebDriverNavigation.html">WebDriverNavigation</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.WebDriverOptions.html">WebDriverOptions</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.WebDriverOptions.html">WebDriverOptions</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.WebDriverPlatform.html">WebDriverPlatform</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.WebDriverPlatform.html">WebDriverPlatform</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.WebDriverPoint.html">WebDriverPoint</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.WebDriverPoint.html">WebDriverPoint</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.WebDriverRadios.html">WebDriverRadios</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.WebDriverSelect.html">WebDriverSelect</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.WebDriverSelect.html">WebDriverSelect</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.WebDriverTimeouts.html">WebDriverTimeouts</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.WebDriverTimeouts.html">WebDriverTimeouts</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.WebDriverUpAction.html">WebDriverUpAction</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.WebDriverUpAction.html">WebDriverUpAction</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.WebDriverWait.html">WebDriverWait</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.WebDriverWait.html">WebDriverWait</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.WebDriverWindow.html">WebDriverWindow</a></li>
+                                                    <li class="class"><a href="../classes/Facebook.WebDriver.WebDriverWindow.html">WebDriverWindow</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-984872771"></a>
+                                <a href="../namespaces/Symfony.html" style="margin-left: 30px; padding-left: 0">Symfony</a>
+            </div>
+            <div id="namespace-984872771" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-141500250"></a>
+                                <a href="../namespaces/Symfony.Component.html" style="margin-left: 30px; padding-left: 0">Component</a>
+            </div>
+            <div id="namespace-141500250" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-2071748487"></a>
+                                <a href="../namespaces/Symfony.Component.Process.html" style="margin-left: 30px; padding-left: 0">Process</a>
+            </div>
+            <div id="namespace-2071748487" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-918723983"></a>
+                                <a href="../namespaces/Symfony.Component.Process.Exception.html" style="margin-left: 30px; padding-left: 0">Exception</a>
+            </div>
+            <div id="namespace-918723983" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/Symfony.Component.Process.Exception.ExceptionInterface.html">ExceptionInterface</a></li>
+                                                                                                    <li class="class"><a href="../classes/Symfony.Component.Process.Exception.InvalidArgumentException.html">InvalidArgumentException</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.Process.Exception.LogicException.html">LogicException</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.Process.Exception.ProcessFailedException.html">ProcessFailedException</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.Process.Exception.ProcessSignaledException.html">ProcessSignaledException</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.Process.Exception.ProcessTimedOutException.html">ProcessTimedOutException</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.Process.Exception.RuntimeException.html">RuntimeException</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1333968070"></a>
+                                <a href="../namespaces/Symfony.Component.Process.Pipes.html" style="margin-left: 30px; padding-left: 0">Pipes</a>
+            </div>
+            <div id="namespace-1333968070" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Symfony.Component.Process.Pipes.AbstractPipes.html">AbstractPipes</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.Process.Pipes.WindowsPipes.html">WindowsPipes</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-473151874"></a>
+                                <a href="../namespaces/Symfony.Component.Process.Tests.html" style="margin-left: 30px; padding-left: 0">Tests</a>
+            </div>
+            <div id="namespace-473151874" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Symfony.Component.Process.Tests.ExecutableFinderTest.html">ExecutableFinderTest</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.Process.Tests.PhpExecutableFinderTest.html">PhpExecutableFinderTest</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.Process.Tests.PhpProcessTest.html">PhpProcessTest</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.Process.Tests.ProcessFailedExceptionTest.html">ProcessFailedExceptionTest</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Symfony.Component.Process.ExecutableFinder.html">ExecutableFinder</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.Process.InputStream.html">InputStream</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.Process.PhpExecutableFinder.html">PhpExecutableFinder</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.Process.PhpProcess.html">PhpProcess</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.Process.ProcessUtils.html">ProcessUtils</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/ComposerAutoloaderInit1d477ad1e8c34b27f098484c0ca6bacb.html">ComposerAutoloaderInit1d477ad1e8c34b27f098484c0ca6bacb</a></li>
+                                                    <li class="class"><a href="../classes/incTest.html">incTest</a></li>
+                                                    <li class="class"><a href="../classes/incTest.html">incTest</a></li>
+                                                    <li class="class"><a href="../classes/incTest.html">incTest</a></li>
+                                                    <li class="class"><a href="../classes/PdoGsb.html">PdoGsb</a></li>
+                                                    <li class="class"><a href="../classes/PdoGsb.html">PdoGsb</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        </div>
+    </section>
+    <section class="row-fluid">
+        <div class="span10 offset2">
+            <div class="row-fluid">
+                <div class="span8 content file">
+                    <nav>
+                                                                    </nav>
+
+                    <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"><i class="icon-code"></i></a>
+                    <h1><small>includes</small>fct.inc.php</h1>
+                    <p><em>Fonctions pour l&#039;application GSB</em></p>
+                    <p>PHP Version 7</p>
+
+                    
+                    
+                                    </div>
+
+                <aside class="span4 detailsbar">
+                    <dl>
+                                                    <dt>Package</dt>
+                            <dd><div class="namespace-wrapper">\GSB</div></dd>
+                        
+                                                                                    <dt>See also</dt>
+                                                                                        <dd><a href="http://www.php.net/manual/fr/book.pdo.php"><div class="namespace-wrapper">PHP Data Objects sur php.net</div></a></dd>
+                                                    
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                                                    <tr>
+                                <th>
+                                    category
+                                </th>
+                                <td>
+                                                                            <p>PPE</p>
+                                                                    </td>
+                            </tr>
+                                                    <tr>
+                                <th>
+                                    author
+                                </th>
+                                <td>
+                                                                            <p>Cheri Bibi - Réseau CERTA <a href="mailto:contact@reseaucerta.org">contact@reseaucerta.org</a></p>
+                                                                            <p>José GIL <a href="mailto:jgil@ac-nice.fr">jgil@ac-nice.fr</a></p>
+                                                                    </td>
+                            </tr>
+                                                    <tr>
+                                <th>
+                                    copyright
+                                </th>
+                                <td>
+                                                                            <p>2017 Réseau CERTA</p>
+                                                                    </td>
+                            </tr>
+                                                    <tr>
+                                <th>
+                                    license
+                                </th>
+                                <td>
+                                                                            <p>Réseau CERTA</p>
+                                                                    </td>
+                            </tr>
+                                                    <tr>
+                                <th>
+                                    version
+                                </th>
+                                <td>
+                                                                            <p>GIT: <0></p>
+                                                                    </td>
+                            </tr>
+                                            </table>
+
+                </aside>
+            </div>
+
+            
+                        <div class="row-fluid">
+                <section class="span8 content file">
+                    <h2>Functions</h2>
+                </section>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_estConnecte" name="method_estConnecte" class="anchor"></a>
+            <article class="method">
+                <h3 class=" ">estConnecte()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">estConnecte() : \vrai</pre>
+                <p><em>Teste si un quelconque visiteur est connecté</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    \vrai
+                                            &mdash; <p>ou faux</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                    <dt>File</dt>
+                    <dd><a href=""><div class="path-wrapper">includes/fct.inc.php</div></a></dd>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                                                            <p>GSB</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_connecter" name="method_connecter" class="anchor"></a>
+            <article class="method">
+                <h3 class=" ">connecter()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">connecter(String  <span class="argument">$idVisiteur</span>, String  <span class="argument">$nom</span>, String  <span class="argument">$prenom</span>) : null</pre>
+                <p><em>Enregistre dans une variable session les infos d&#039;un visiteur</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>String</td>
+                                <td>$idVisiteur </td>
+                                <td><p>ID du visiteur</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>String</td>
+                                <td>$nom </td>
+                                <td><p>Nom du visiteur</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>String</td>
+                                <td>$prenom </td>
+                                <td><p>Prénom du visiteur</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    null
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                    <dt>File</dt>
+                    <dd><a href=""><div class="path-wrapper">includes/fct.inc.php</div></a></dd>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                                                            <p>GSB</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_deconnecter" name="method_deconnecter" class="anchor"></a>
+            <article class="method">
+                <h3 class=" ">deconnecter()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">deconnecter() : null</pre>
+                <p><em>Détruit la session active</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    null
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                    <dt>File</dt>
+                    <dd><a href=""><div class="path-wrapper">includes/fct.inc.php</div></a></dd>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                                                            <p>GSB</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_dateFrancaisVersAnglais" name="method_dateFrancaisVersAnglais" class="anchor"></a>
+            <article class="method">
+                <h3 class=" ">dateFrancaisVersAnglais()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">dateFrancaisVersAnglais(String  <span class="argument">$maDate</span>) : \Date</pre>
+                <p><em>Transforme une date au format français jj/mm/aaaa vers le format anglais
+aaaa-mm-jj</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>String</td>
+                                <td>$maDate </td>
+                                <td><p>au format  jj/mm/aaaa</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    \Date
+                                            &mdash; <p>au format anglais aaaa-mm-jj</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                    <dt>File</dt>
+                    <dd><a href=""><div class="path-wrapper">includes/fct.inc.php</div></a></dd>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                                                            <p>GSB</p>
+                                                    </td>
+                    </tr>
+                                    <tr>
+                        <th>
+                            assert
+                        </th>
+                        <td>
+                                                                                            <p>(&quot;2018/10/12&quot;) == &quot;12/10/2018&quot;</p>
+                                                                                            <p>(param1, param2) == expectedResult</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_dateAnglaisVersFrancais" name="method_dateAnglaisVersFrancais" class="anchor"></a>
+            <article class="method">
+                <h3 class=" ">dateAnglaisVersFrancais()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">dateAnglaisVersFrancais(String  <span class="argument">$maDate</span>) : \Date</pre>
+                <p><em>Transforme une date au format format anglais aaaa-mm-jj vers le format
+français jj/mm/aaaa</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>String</td>
+                                <td>$maDate </td>
+                                <td><p>au format  aaaa-mm-jj</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    \Date
+                                            &mdash; <p>au format format français jj/mm/aaaa</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                    <dt>File</dt>
+                    <dd><a href=""><div class="path-wrapper">includes/fct.inc.php</div></a></dd>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                                                            <p>GSB</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getMois" name="method_getMois" class="anchor"></a>
+            <article class="method">
+                <h3 class=" ">getMois()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getMois(String  <span class="argument">$date</span>) : String</pre>
+                <p><em>Retourne le mois au format aaaamm selon le jour dans le mois</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>String</td>
+                                <td>$date </td>
+                                <td><p>au format  jj/mm/aaaa</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    String
+                                            &mdash; <p>Mois au format aaaamm</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                    <dt>File</dt>
+                    <dd><a href=""><div class="path-wrapper">includes/fct.inc.php</div></a></dd>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                                                            <p>GSB</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_estEntierPositif" name="method_estEntierPositif" class="anchor"></a>
+            <article class="method">
+                <h3 class=" ">estEntierPositif()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">estEntierPositif(Integer  <span class="argument">$valeur</span>) : Boolean</pre>
+                <p><em>Indique si une valeur est un entier positif ou nul</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>Integer</td>
+                                <td>$valeur </td>
+                                <td><p>Valeur</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    Boolean
+                                            &mdash; <p>vrai ou faux</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                    <dt>File</dt>
+                    <dd><a href=""><div class="path-wrapper">includes/fct.inc.php</div></a></dd>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                                                            <p>GSB</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_estTableauEntiers" name="method_estTableauEntiers" class="anchor"></a>
+            <article class="method">
+                <h3 class=" ">estTableauEntiers()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">estTableauEntiers(Array  <span class="argument">$tabEntiers</span>) : Boolean</pre>
+                <p><em>Indique si un tableau de valeurs est constitué d&#039;entiers positifs ou nuls</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>Array</td>
+                                <td>$tabEntiers </td>
+                                <td><p>Un tableau d'entier</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    Boolean
+                                            &mdash; <p>vrai ou faux</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                    <dt>File</dt>
+                    <dd><a href=""><div class="path-wrapper">includes/fct.inc.php</div></a></dd>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                                                            <p>GSB</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_estDateDepassee" name="method_estDateDepassee" class="anchor"></a>
+            <article class="method">
+                <h3 class=" ">estDateDepassee()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">estDateDepassee(String  <span class="argument">$dateTestee</span>) : Boolean</pre>
+                <p><em>Vérifie si une date est inférieure d&#039;un an à la date actuelle</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>String</td>
+                                <td>$dateTestee </td>
+                                <td><p>Date à tester</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    Boolean
+                                            &mdash; <p>vrai ou faux</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                    <dt>File</dt>
+                    <dd><a href=""><div class="path-wrapper">includes/fct.inc.php</div></a></dd>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                                                            <p>GSB</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_estDateValide" name="method_estDateValide" class="anchor"></a>
+            <article class="method">
+                <h3 class=" ">estDateValide()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">estDateValide(String  <span class="argument">$date</span>) : Boolean</pre>
+                <p><em>Vérifie la validité du format d&#039;une date française jj/mm/aaaa</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>String</td>
+                                <td>$date </td>
+                                <td><p>Date à tester</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    Boolean
+                                            &mdash; <p>vrai ou faux</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                    <dt>File</dt>
+                    <dd><a href=""><div class="path-wrapper">includes/fct.inc.php</div></a></dd>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                                                            <p>GSB</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_lesQteFraisValides" name="method_lesQteFraisValides" class="anchor"></a>
+            <article class="method">
+                <h3 class=" ">lesQteFraisValides()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">lesQteFraisValides(Array  <span class="argument">$lesFrais</span>) : Boolean</pre>
+                <p><em>Vérifie que le tableau de frais ne contient que des valeurs numériques</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>Array</td>
+                                <td>$lesFrais </td>
+                                <td><p>Tableau d'entier</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    Boolean
+                                            &mdash; <p>vrai ou faux</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                    <dt>File</dt>
+                    <dd><a href=""><div class="path-wrapper">includes/fct.inc.php</div></a></dd>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                                                            <p>GSB</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_valideInfosFrais" name="method_valideInfosFrais" class="anchor"></a>
+            <article class="method">
+                <h3 class=" ">valideInfosFrais()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">valideInfosFrais(String  <span class="argument">$dateFrais</span>, String  <span class="argument">$libelle</span>, Float  <span class="argument">$montant</span>) : null</pre>
+                <p><em>Vérifie la validité des trois arguments : la date, le libellé du frais
+et le montant</em></p>
+                <p>Des message d'erreurs sont ajoutés au tableau des erreurs</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>String</td>
+                                <td>$dateFrais </td>
+                                <td><p>Date des frais</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>String</td>
+                                <td>$libelle </td>
+                                <td><p>Libellé des frais</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>Float</td>
+                                <td>$montant </td>
+                                <td><p>Montant des frais</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    null
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                    <dt>File</dt>
+                    <dd><a href=""><div class="path-wrapper">includes/fct.inc.php</div></a></dd>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                                                            <p>GSB</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_ajouterErreur" name="method_ajouterErreur" class="anchor"></a>
+            <article class="method">
+                <h3 class=" ">ajouterErreur()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">ajouterErreur(String  <span class="argument">$msg</span>) : null</pre>
+                <p><em>Ajoute le libellé d&#039;une erreur au tableau des erreurs</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>String</td>
+                                <td>$msg </td>
+                                <td><p>Libellé de l'erreur</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    null
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                    <dt>File</dt>
+                    <dd><a href=""><div class="path-wrapper">includes/fct.inc.php</div></a></dd>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                                                            <p>GSB</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_nbErreurs" name="method_nbErreurs" class="anchor"></a>
+            <article class="method">
+                <h3 class=" ">nbErreurs()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">nbErreurs() : Integer</pre>
+                <p><em>Retoune le nombre de lignes du tableau des erreurs</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    Integer
+                                            &mdash; <p>le nombre d'erreurs</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                    <dt>File</dt>
+                    <dd><a href=""><div class="path-wrapper">includes/fct.inc.php</div></a></dd>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                                                            <p>GSB</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                            
+        </div>
+    </section>
+
+    <div id="source-view" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="source-view-label" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="source-view-label"></h3>
+        </div>
+        <div class="modal-body">
+            <pre data-src="../files/includes/fct.inc.php.txt" class="language-php line-numbers"></pre>
+        </div>
+    </div>
+
+    <footer class="row-fluid">
+        <section class="span10 offset2">
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <section class="row-fluid footer-sections">
+                        <section class="span4">
+                                                        <h1><i class="icon-code"></i></h1>
+                            <div>
+                                <ul>
+                                                                            <li><a href="../namespaces/Composer.html">\Composer</a></li>
+                                                                            <li><a href="../namespaces/Facebook.html">\Facebook</a></li>
+                                                                            <li><a href="../namespaces/Symfony.html">\Symfony</a></li>
+                                                                    </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-bar-chart"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../graphs/class.html">Class Hierarchy Diagram</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-pushpin"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../reports/errors.html">Errors</a></li>
+                                    <li><a href="../reports/markers.html">Markers</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <hr />
+                    Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
+                    on April 2nd, 2019 at 12:44.
+                </section>
+            </section>
+        </section>
+    </footer>
+</div>
+
+</body>
+</html>
