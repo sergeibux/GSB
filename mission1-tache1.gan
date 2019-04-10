@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?><project name="Untitled Gantt Project" company="" webLink="http://" view-date="2019-04-07" view-index="0" gantt-divider-location="1108" resource-divider-location="300" version="2.8.10" locale="fr">
+    <description/>
+    <view zooming-state="default:2" id="gantt-chart">
+        <field id="tpd3" name="Nom" width="890" order="0"/>
+        <field id="tpd4" name="Date de début" width="112" order="1"/>
+        <field id="tpd5" name="Date de fin" width="102" order="2"/>
+    </view>
+    <view id="resource-table">
+        <field id="0" name="Nom" width="210" order="0"/>
+        <field id="1" name="Rôle par défaut" width="86" order="1"/>
+    </view>
+    <!-- -->
+    <calendars>
+        <day-types>
+            <day-type id="0"/>
+            <day-type id="1"/>
+            <default-week id="1" name="default" sun="1" mon="0" tue="0" wed="0" thu="0" fri="0" sat="1"/>
+            <only-show-weekends value="false"/>
+            <overriden-day-types/>
+            <days/>
+        </day-types>
+    </calendars>
+    <tasks empty-milestones="true">
+        <taskproperties>
+            <taskproperty id="tpd0" name="type" type="default" valuetype="icon"/>
+            <taskproperty id="tpd1" name="priority" type="default" valuetype="icon"/>
+            <taskproperty id="tpd2" name="info" type="default" valuetype="icon"/>
+            <taskproperty id="tpd3" name="name" type="default" valuetype="text"/>
+            <taskproperty id="tpd4" name="begindate" type="default" valuetype="date"/>
+            <taskproperty id="tpd5" name="enddate" type="default" valuetype="date"/>
+            <taskproperty id="tpd6" name="duration" type="default" valuetype="int"/>
+            <taskproperty id="tpd7" name="completion" type="default" valuetype="int"/>
+            <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
+            <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
+        </taskproperties>
+        <task id="0" name="Enregistrment des frais engagés" meeting="false" start="2019-04-08" duration="1" complete="0" expand="true">
+            <task id="1" name="activité directe (déplacement, restauration et hébergement)" meeting="false" start="2019-04-08" duration="1" complete="0" expand="true"/>
+            <task id="2" name="activités annexes (événementiel, conférences, autres)" meeting="false" start="2019-04-08" duration="1" complete="0" expand="true"/>
+            <task id="3" name="présenter un suivi daté des opérations (réception des pièces, validation de la demande de remboursement, mise en paiement, remboursement effectué)" meeting="false" start="2019-04-08" duration="1" complete="0" expand="true"/>
+        </task>
+        <task id="4" name="environnement doit être accessible aux seuls acteurs de l'entreprise" meeting="false" start="2019-04-08" duration="1" complete="0" expand="true">
+            <task id="5" name="les échanges produits doivent être cryptés par le serveur Web" meeting="false" start="2019-04-08" duration="1" complete="0" expand="true"/>
+        </task>
+        <task id="11" name="fiche de demande de remboursement" meeting="false" start="2019-04-08" duration="1" complete="0" expand="true">
+            <task id="8" name="produire automatiquement l'équivalent de la fiche pour le mois en cours" meeting="false" start="2019-04-08" duration="1" complete="0" expand="true"/>
+            <task id="9" name="la mettre à disposition des visiteurs pour la saisie en ligne" meeting="false" start="2019-04-08" duration="1" complete="0" expand="true"/>
+            <task id="10" name="éditable tout au long du mois en cours" meeting="false" start="2019-04-08" duration="1" complete="0" expand="true"/>
+            <task id="12" name="Clotûre AutomatiséE le dernier jour du mois" meeting="false" start="2019-04-08" duration="1" complete="0" expand="true">
+                <task id="13" name="A la première saisie pour le mois N par le visiteur, sa fiche du mois précédent est clôturée si elle ne l’est pas" meeting="false" start="2019-04-08" duration="1" complete="0" expand="true"/>
+                <task id="14" name="Au début de la campagne de validation des fiches par le service comptable, un script est lancé qui clôture toutes les fiches non clôturées du mois qui va être traité." meeting="false" start="2019-04-08" duration="1" complete="0" expand="true"/>
+                <task id="15" name="Controles effectués :" meeting="false" start="2019-04-08" duration="1" complete="0" expand="false">
+                    <task id="16" name="rais forfaitisés sont conformes : nombre de jours enregistrés ne dépassant pas le nombre de jours effectivement travaillés (congés), distance kilométrique cohérente, éventuellement consultation des fiches de comptes-rendus pour s’assurer des déplacements effectifs." meeting="false" start="2019-04-08" duration="1" complete="0" expand="true"/>
+                    <task id="17" name="En cas d’incohérence ou d’erreur constatée :" meeting="false" start="2019-04-08" duration="1" complete="0" expand="true">
+                        <task id="18" name="un contact est pris par téléphone" meeting="false" start="2019-04-08" duration="1" complete="0" expand="true"/>
+                        <task id="19" name="Les valeurs sont corrigées en conséquence" meeting="false" start="2019-04-08" duration="1" complete="0" expand="true"/>
+                        <task id="20" name="Pour les frais hors forfait, le service comptable s’appuie sur les factures acquittées" meeting="false" start="2019-04-08" duration="1" complete="0" expand="true">
+                            <task id="21" name="Les agents valident ou non" meeting="false" start="2019-04-08" duration="1" complete="0" expand="true"/>
+                            <task id="22" name="Un frais non validé est supprimé" meeting="false" start="2019-04-08" duration="1" complete="0" expand="true"/>
+                            <task id="23" name="Le visiteur doit être tenu informé de cette suppression par les comptables" meeting="false" start="2019-04-08" duration="1" complete="0" expand="true">
+                                <task id="24" name="On n’enregistrera pas la raison du refus" meeting="false" start="2019-04-08" duration="1" complete="0" expand="true"/>
+                            </task>
+                        </task>
+                    </task>
+                </task>
+                <task id="27" name="Les agents comptables reportent sur chaque facture reçue le numéro de matricule du visiteur, la date (année/mois) de prise en charge et les classent par ordre chronologique" meeting="false" start="2019-04-08" duration="1" complete="0" expand="true"/>
+                <task id="25" name="Les éléments reçus après le 10 seront reportés sur le mois ultérieur et seront basculés automatiquement sur la fiche du mois suivant" meeting="false" start="2019-04-08" duration="1" complete="0" expand="true"/>
+                <task id="26" name="Après la clôture, les visiteurs peuvent consulter l’évolution de la fiche mais ne peuvent plus la modifier" meeting="false" start="2019-04-08" duration="1" complete="0" expand="true"/>
+            </task>
+            <task id="28" name="L’état de la fiche de frais schéma p.4" meeting="false" start="2019-04-08" duration="1" complete="0" expand="true">
+                <task id="30" name="Les visiteurs doivent pouvoir consulter sur l'année écoulée, pour chaque mois, le montant du remboursement effectué par le laboratoire et le nombre de prestations pris en compte." meeting="false" start="2019-04-08" duration="1" complete="0" expand="true"/>
+            </task>
+        </task>
+        <task id="7" name="La documentation devra présenter l'arborescence des pages pour chaque module, le descriptif des éléments, classes et bibliothèques utilisées, la liste des frameworks ou bibliothèques externes utilisés." meeting="false" start="2019-04-08" duration="1" complete="0" expand="true"/>
+    </tasks>
+    <resources/>
+    <allocations/>
+    <vacations/>
+    <previous/>
+    <roles roleset-name="Default"/>
+    <roles roleset-name="SoftwareDevelopment"/>
+</project>

@@ -1358,11 +1358,11 @@ a.text-info:focus {
   color: #245269;
 }
 .text-warning {
-  color: #8a6d3b;
+  color: #ff9900;
 }
 a.text-warning:hover,
 a.text-warning:focus {
-  color: #66512c;
+  color: #ff4400;
 }
 .text-danger {
   color: #a94442;
@@ -5080,7 +5080,7 @@ a.thumbnail.active {
 .alert-warning {
   color: #8a6d3b;
   background-color: #fcf8e3;
-  border-color: #faebcc;
+  border-color: #ff9900;
 }
 .alert-warning hr {
   border-top-color: #f7e1b5;
@@ -5755,22 +5755,22 @@ button.list-group-item-danger.active:focus {
   border-bottom-color: #bce8f1;
 }
 .panel-warning {
-  border-color: #faebcc;
+  border-color: #ff9900;
 }
 .panel-warning > .panel-heading {
-  color: #8a6d3b;
-  background-color: #fcf8e3;
-  border-color: #faebcc;
+  color: #fff;
+  background-color: #ff9900;
+  border-color: #ff9900;
 }
 .panel-warning > .panel-heading + .panel-collapse > .panel-body {
-  border-top-color: #faebcc;
+  border-top-color: #ff9900;
 }
 .panel-warning > .panel-heading .badge {
   color: #fcf8e3;
   background-color: #8a6d3b;
 }
 .panel-warning > .panel-footer + .panel-collapse > .panel-body {
-  border-bottom-color: #faebcc;
+  border-bottom-color: #ff9900;
 }
 .panel-danger {
   border-color: #ebccd1;
